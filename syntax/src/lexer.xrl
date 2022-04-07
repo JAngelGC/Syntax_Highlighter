@@ -13,8 +13,16 @@ Rules.
 {D}+                            :{token, {int,TokenLine,  TokenChars}}.
 {D}+\.{D}*f?                    :{token, {float,TokenLine,  TokenChars}}.
 {D}+.{D}*e[+\-]?{D}+f?          :{token, {float,TokenLine,  TokenChars}}.
-".+"                          :{token, {string,TokenLine, TokenChars}}.
+".+"                            :{token, {string,TokenLine, TokenChars}}.
 '{L}'                           :{token, {char,TokenLine, TokenChars}}.
+
+% Operators
+\+                              :{token, {operator,TokenLine, TokenChars}}.
+\=                              :{token, {operator,TokenLine, TokenChars}}.
+\-                              :{token, {operator,TokenLine, TokenChars}}.
+\/                              :{token, {operator,TokenLine, TokenChars}}.
+\*                              :{token, {operator,TokenLine, TokenChars}}.
+
 
 
 % Keywords
