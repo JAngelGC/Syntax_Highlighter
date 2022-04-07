@@ -26,6 +26,9 @@ Rules.
 
 
 % Keywords
+% Include
+#(include)                       :{token, {include,TokenLine, TokenChars}}.
+<{L}+.?{L}*>                    :{token, {header,TokenLine, TokenChars}}.
 
 
 
