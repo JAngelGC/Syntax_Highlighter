@@ -1,18 +1,19 @@
 defmodule Syntax do
-  @moduledoc """
-  Documentation for `Syntax`.
-  """
+  def format(tokens) do
+    Enum.map(tokens, fn {token, tchars} ->
+      tchars = List.to_string(tchars)
+      tchars = HtmlEntities.encode(tchars)
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Syntax.hello()
-      :world
-
-  """
-  def hello do
-    :world
+      case token do
+        :identifier -> "<span class=\"identifier\">#{tchars}</span>"
+        :data_type -> "<span class=\"identifier\">#{tchars}</span>"
+        :data -> "<span class=\"identifier\">#{tchars}</span>"
+        :assign -> "<span class=\"identifier\">#{tchars}</span>"
+        :operator -> "<span class=\"identifier\">#{tchars}</span>"
+        :relation -> "<span class=\"identifier\">#{tchars}</span>"
+        :logical -> "<span class=\"identifier\">#{tchars}</span>"
+        _ -> "<span>#{tchars}</span>"
+      end
+    end)
   end
 end
