@@ -11,60 +11,60 @@ Rules.
 
 % Data types
 % Keyword
-int                             :{token, {data_type,TokenLine,  TokenChars}}.
-float                           :{token, {data_type,TokenLine,  TokenChars}}.
-string                          :{token, {data_type,TokenLine,  TokenChars}}.
-bool                            :{token, {data_type,TokenLine,  TokenChars}}.
-char                            :{token, {data_type,TokenLine,  TokenChars}}.
-double                          :{token, {data_type,TokenLine,  TokenChars}}.
-bool                            :{token, {data_type,TokenLine,  TokenChars}}.
+int                             :{token, {data_type,  TokenChars}}.
+float                           :{token, {data_type,  TokenChars}}.
+string                          :{token, {data_type,  TokenChars}}.
+bool                            :{token, {data_type,  TokenChars}}.
+char                            :{token, {data_type,  TokenChars}}.
+double                          :{token, {data_type,  TokenChars}}.
+bool                            :{token, {data_type,  TokenChars}}.
 % Values
-{D}+                            :{token, {int,TokenLine,  TokenChars}}.
-{D}+\.{D}*f?                    :{token, {float,TokenLine,  TokenChars}}.
-{D}+\.{D}*e[+\-]?{D}+f?         :{token, {float,TokenLine,  TokenChars}}.
-"({AL}|{WS}|{PUNCT})+"          :{token, {string,TokenLine, TokenChars}}.
-'{L}'                           :{token, {char,TokenLine, TokenChars}}.
+{D}+                            :{token, {data,  TokenChars}}.
+{D}+\.{D}*f?                    :{token, {data,  TokenChars}}.
+{D}+\.{D}*e[+\-]?{D}+f?         :{token, {data,  TokenChars}}.
+"({AL}|{WS}|{PUNCT})+"          :{token, {data, TokenChars}}.
+'{L}'                           :{token, {data, TokenChars}}.
 
 
 % Operators
 % Asignment
-\=                              :{token, {assign,TokenLine, TokenChars}}.
-\+=                             :{token, {assign,TokenLine, TokenChars}}.
-\-=                             :{token, {assign,TokenLine, TokenChars}}.
-\/=                             :{token, {assign,TokenLine, TokenChars}}.
-\*=                             :{token, {assign,TokenLine, TokenChars}}.
-\%=                             :{token, {assign,TokenLine, TokenChars}}.
+\=                              :{token, {assign, TokenChars}}.
+\+=                             :{token, {assign, TokenChars}}.
+\-=                             :{token, {assign, TokenChars}}.
+\/=                             :{token, {assign, TokenChars}}.
+\*=                             :{token, {assign, TokenChars}}.
+\%=                             :{token, {assign, TokenChars}}.
 % Arithmetic
-\+                              :{token, {operator,TokenLine, TokenChars}}.
-\-                              :{token, {operator,TokenLine, TokenChars}}.
-\/                              :{token, {operator,TokenLine, TokenChars}}.
-\*                              :{token, {operator,TokenLine, TokenChars}}.
-\%                              :{token, {operator,TokenLine, TokenChars}}.
-\+\+                            :{token, {operator,TokenLine, TokenChars}}.
-\-\-                            :{token, {operator,TokenLine, TokenChars}}.
+\+                              :{token, {operator, TokenChars}}.
+\-                              :{token, {operator, TokenChars}}.
+\/                              :{token, {operator, TokenChars}}.
+\*                              :{token, {operator, TokenChars}}.
+\%                              :{token, {operator, TokenChars}}.
+\+\+                            :{token, {operator, TokenChars}}.
+\-\-                            :{token, {operator, TokenChars}}.
 % Relational
-==                              :{token, {relation,TokenLine, TokenChars}}.
-!=                              :{token, {relation,TokenLine, TokenChars}}.
-<                               :{token, {relation,TokenLine, TokenChars}}.
->                               :{token, {relation,TokenLine, TokenChars}}.
-<=                              :{token, {relation,TokenLine, TokenChars}}.
->=                              :{token, {relation,TokenLine, TokenChars}}.
+==                              :{token, {relation, TokenChars}}.
+!=                              :{token, {relation, TokenChars}}.
+<                               :{token, {relation, TokenChars}}.
+>                               :{token, {relation, TokenChars}}.
+<=                              :{token, {relation, TokenChars}}.
+>=                              :{token, {relation, TokenChars}}.
 % Logical
-&&                              :{token, {logical,TokenLine, TokenChars}}.
-\|\|                            :{token, {logical,TokenLine, TokenChars}}.
-!                               :{token, {logical,TokenLine, TokenChars}}.
-[\(\)]                          :{token, {parentheses,TokenLine, TokenChars}}.
+&&                              :{token, {logical, TokenChars}}.
+\|\|                            :{token, {logical, TokenChars}}.
+!                               :{token, {logical, TokenChars}}.
+[\(\)]                          :{token, {logical, TokenChars}}.
 
 
 
 % Keywords
 % Include
-#(include)                      :{token, {include,TokenLine, TokenChars}}.
-<{L}+.?{L}*>                    :{token, {header,TokenLine, TokenChars}}.
+#(include)                      :{token, {include, TokenChars}}.
+<{L}+.?{L}*>                    :{token, {header, TokenChars}}.
 
 
 % Identifiers
-[_A-Za-z]+[_0-9A-Za-z]*         :{token, {identifier,TokenLine,  TokenChars}}.
+[_A-Za-z]+[_0-9A-Za-z]*         :{token, {identifier,  TokenChars}}.
 
 Erlang code.
 
