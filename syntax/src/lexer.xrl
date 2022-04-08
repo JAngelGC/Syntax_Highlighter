@@ -67,3 +67,8 @@ bool                            :{token, {data_type,TokenLine,  TokenChars}}.
 [_A-Za-z]+[_0-9A-Za-z]*         :{token, {identifier,TokenLine,  TokenChars}}.
 
 Erlang code.
+
+
+
+% Run this file in iex -S mix
+% :lexer.string 'ab'
