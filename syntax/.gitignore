@@ -24,3 +24,6 @@ syntax-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# Folders and files
+.elixir_ls/
