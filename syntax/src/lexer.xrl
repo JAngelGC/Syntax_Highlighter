@@ -1,7 +1,9 @@
 Definitions.
-D = [0-9]
-L = [A-Za-z]
-A = [0-9A-Za-z]
+D = [0-9]         %Digits
+L = [A-Za-z]      %Letters
+AL = [0-9A-Za-z]  %Alphanumeric
+WS = (\n|\t|\"?"?|\\|\s)  %Whitespace
+PUNCT = [/*-+~!@#$%^&*()-=_+[\]{}\|:""''<>?,./] %Punctuation
 
 Rules.
 \s                    :skip_token.
@@ -12,8 +14,8 @@ Rules.
 % Data types
 {D}+                            :{token, {int,TokenLine,  TokenChars}}.
 {D}+\.{D}*f?                    :{token, {float,TokenLine,  TokenChars}}.
-{D}+.{D}*e[+\-]?{D}+f?          :{token, {float,TokenLine,  TokenChars}}.
-".+"                            :{token, {string,TokenLine, TokenChars}}.
+{D}+\.{D}*e[+\-]?{D}+f?          :{token, {float,TokenLine,  TokenChars}}.
+"({AL}|{WS}|{PUNCT})+"                            :{token, {string,TokenLine, TokenChars}}.
 '{L}'                           :{token, {char,TokenLine, TokenChars}}.
 
 % Operators
