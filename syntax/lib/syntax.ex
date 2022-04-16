@@ -3,7 +3,11 @@ defmodule Syntax do
   # :lexer.string('area = pi * radio ** 2')
   # Syntax.format(elem(:lexer.string('area = pi * radio ** 2'),1))
   # tokens = [{:identifier, 'area'}, {:operator, '='}, {:identifier, 'pi'}, {:operator, '*'}, {:identifier, 'radio'}, {:operator, '**'}, {:int, '2'}]
-  # Syntax.format(elem(:lexer.string('  '),1))
+#   Syntax.format(elem(:lexer.string('//Hola
+#   // Your First C++ Program
+# a = 1 + b;
+#   '),1))
+
   def read(file) do
     File.read!(file)
     |> String.to_charlist()
@@ -24,13 +28,15 @@ defmodule Syntax do
       case token do
         :space -> "<span class='space'>#{tchars}</span>"
         :newline -> "<span class='newline'><br></span>"
-        :identifier -> "<span class='identifier'>#{tchars}</span>"
+        :comment -> "<span class='comment'>#{tchars}</span>"
         :data_type -> "<span class='data-type'>#{tchars}</span>"
-        :data -> "<span class='data'>#{tchars}</span>"
+        :number -> "<span class='number'>#{tchars}</span>"
+        :string -> "<span class='string'>#{tchars}</span>"
         :assign -> "<span class='assign'>#{tchars}</span>"
         :operator -> "<span class='operator'>#{tchars}</span>"
         :relation -> "<span class='relation'>#{tchars}</span>"
         :logical -> "<span class='logical'>#{tchars}</span>"
+        :identifier -> "<span class='identifier'>#{tchars}</span>"
         _ -> "<span>#{tchars}</span>"
       end
     end)
