@@ -6,7 +6,8 @@ WS = (\n|\t|\"?"?|\\|\s)
 PUNCT = [/*-+~!@#$%^&*()-=_+[\]{}\|:""''<>?,./]
 
 Rules.
-\s                    :skip_token.
+[\s\t]+                             :{token, {space,  TokenChars}}.
+\n                             :{token, {newline,  TokenChars}}.
 
 % Notas
 % Si dos string coinciden con el patron de la regex, toma el que este mas arriba
@@ -58,7 +59,7 @@ unsigned                        :{token, {keyword, TokenChars}}.
 void                            :{token, {keyword, TokenChars}}.
 volatile                        :{token, {keyword, TokenChars}}.
 while                           :{token, {keyword, TokenChars}}.
-              
+
 % Keywords (second round)                           :{token, {keyword, TokenChars}}.
 asm                             :{token, {keyword, TokenChars}}.
 catch                           :{token, {keyword, TokenChars}}.
