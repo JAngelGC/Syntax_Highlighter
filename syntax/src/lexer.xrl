@@ -8,6 +8,9 @@ PUNCT = [/*-+~!@#$%^&*()-=_+[\]{}\|:""''<>?,./]
 Rules.
 \s                    :skip_token.
 
+% Notas
+% Si dos string coinciden con el patron de la regex, toma el que este mas arriba
+
 
 % Data types
 % Keyword
@@ -19,9 +22,9 @@ char                            :{token, {data_type,  TokenChars}}.
 double                          :{token, {data_type,  TokenChars}}.
 bool                            :{token, {data_type,  TokenChars}}.
 % Values
-{D}+                            :{token, {data,  TokenChars}}.
-{D}+\.{D}*f?                    :{token, {data,  TokenChars}}.
-{D}+\.{D}*e[+\-]?{D}+f?         :{token, {data,  TokenChars}}.
+{D}+                            :{token, {int,  TokenChars}}.
+{D}+\.{D}*f?                    :{token, {float,  TokenChars}}.
+{D}+\.{D}*e[+\-]?{D}+f?         :{token, {float,  TokenChars}}.
 "({AL}|{WS}|{PUNCT})+"          :{token, {data, TokenChars}}.
 '{L}'                           :{token, {data, TokenChars}}.
 
@@ -60,11 +63,17 @@ bool                            :{token, {data_type,  TokenChars}}.
 % Keywords
 % Include
 #(include)                      :{token, {include, TokenChars}}.
-<{L}+.?{L}*>                    :{token, {header, TokenChars}}.
+<{LE}+.?{LE}*>                    :{token, {header, TokenChars}}.
 
 
 % Identifiers
 [_A-Za-z]+[_0-9A-Za-z]*         :{token, {identifier,  TokenChars}}.
+
+
+
+
+% Pruebas de Angel
+hola                          :{token, {titlePrueba,  TokenChars}}.
 
 Erlang code.
 

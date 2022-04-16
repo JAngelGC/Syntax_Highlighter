@@ -1,4 +1,8 @@
 defmodule Syntax do
+
+  # area = pi * radio ** 2
+  # tokens = [{:identifier, 'area'}, {:operator, '='}, {:identifier, 'pi'}, {:operator, '*'}, {:identifier, 'radio'}, {:operator, '**'}, {:int, '2'}]
+
   def format(tokens) do
     Enum.map(tokens, fn {token, tchars} ->
       tchars = List.to_string(tchars)
