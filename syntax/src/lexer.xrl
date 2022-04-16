@@ -5,18 +5,19 @@ AL = [0-9A-Za-z]
 WS = (\n|\t|\"?"?|\\|\s)
 PUNCT = [/*-+~!@#$%^&*()-=_+[\]{}\|:""''<>?,./]
 
-Rules.
-[\s\t]+                             :{token, {space,  TokenChars}}.
-\n                             :{token, {newline,  TokenChars}}.
-
 % Notas
 % Si dos string coinciden con el patron de la regex, toma el que este mas arriba
-% Comments
+Rules.
+% SPACES
+[\s\t]+                        :{token, {space,  TokenChars}}.
+\n                             :{token, {newline,  TokenChars}}.
+
+% COMMENTS
 \//.*                          :{token, {comment,  TokenChars}}.
 \/\*({AL}|{WS}|{PUNCT})+\*\/   :{token, {comment,  TokenChars}}.
 
-% Data types
-% Keyword
+% DATA
+% Types
 int                             :{token, {data_type,  TokenChars}}.
 float                           :{token, {data_type,  TokenChars}}.
 string                          :{token, {data_type,  TokenChars}}.
@@ -26,16 +27,20 @@ double                          :{token, {data_type,  TokenChars}}.
 bool                            :{token, {data_type,  TokenChars}}.
 
 % Values
-{D}+                            :{token, {int,  TokenChars}}.
-{D}+\.{D}*f?                    :{token, {float,  TokenChars}}.
-{D}+\.{D}*e[+\-]?{D}+f?         :{token, {float,  TokenChars}}.
-"({AL}|{WS}|{PUNCT})+"          :{token, {data, TokenChars}}.
-'{L}'                           :{token, {data, TokenChars}}.
+{D}+                            :{token, {number,  TokenChars}}.
+{D}+\.{D}*f?                    :{token, {number,  TokenChars}}.
+{D}+\.{D}*e[+\-]?{D}+f?         :{token, {number,  TokenChars}}.
+"({AL}|{WS}|{PUNCT})+"          :{token, {string, TokenChars}}.
+'{L}'                           :{token, {string, TokenChars}}.
+
+% CONDITIONALS
+if                              :{token, {keyword, TokenChars}}.
+case                            :{token, {keyword, TokenChars}}.
+while                           :{token, {keyword, TokenChars}}.
 
 % Keywords (first round)
 auto                            :{token, {keyword, TokenChars}}.
 break                           :{token, {keyword, TokenChars}}.
-case                            :{token, {keyword, TokenChars}}.
 const                           :{token, {keyword, TokenChars}}.
 continue                        :{token, {keyword, TokenChars}}.
 default                         :{token, {keyword, TokenChars}}.
@@ -45,7 +50,6 @@ enum                            :{token, {keyword, TokenChars}}.
 extern                          :{token, {keyword, TokenChars}}.
 for                             :{token, {keyword, TokenChars}}.
 goto                            :{token, {keyword, TokenChars}}.
-if                              :{token, {keyword, TokenChars}}.
 long                            :{token, {keyword, TokenChars}}.
 register                        :{token, {keyword, TokenChars}}.
 return                          :{token, {keyword, TokenChars}}.
@@ -60,7 +64,6 @@ union                           :{token, {keyword, TokenChars}}.
 unsigned                        :{token, {keyword, TokenChars}}.
 void                            :{token, {keyword, TokenChars}}.
 volatile                        :{token, {keyword, TokenChars}}.
-while                           :{token, {keyword, TokenChars}}.
 
 % Keywords (second round)                           :{token, {keyword, TokenChars}}.
 asm                             :{token, {keyword, TokenChars}}.
