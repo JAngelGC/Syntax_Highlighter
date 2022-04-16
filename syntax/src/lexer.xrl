@@ -99,7 +99,7 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 
 
 % Functions
-
+% Manejar para que las funciones las marque con este color 61afef
 
 
 

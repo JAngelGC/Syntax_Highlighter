@@ -36,13 +36,19 @@ defmodule Syntax do
         :operator -> "<span class='operator'>#{tchars}</span>"
         :relation -> "<span class='relation'>#{tchars}</span>"
         :logical -> "<span class='logical'>#{tchars}</span>"
+        :include -> "<span class='include'>#{tchars}</span>"
+        :header -> "<span class='header'>#{tchars}</span>"
+        
+
+        :keyword -> "<span class='keyword'>#{tchars}</span>"
         :identifier -> "<span class='identifier'>#{tchars}</span>"
+        :data_type -> "<span class='data-type'>#{tchars}</span>"
         _ -> "<span>#{tchars}</span>"
       end
     end)
     |> Enum.join()
 
-    # File.write("htmlFile.txt", Syntax.format(elem(:lexer.string('area = pi * radio ** 2'),1)))
+
   end
 
   # def write(tokens) do
