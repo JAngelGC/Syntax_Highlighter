@@ -1,5 +1,18 @@
+p {
+  background-color: tomato;
+}
+
 span {
   /* white-space: pre-line; */
-  white-space:pre;
+  white-space: pre;
   color: Red;
+  display: inline;
+}
+
+.identifier {
+  color: yellowgreen;
+}
+
+.operator {
+  color: blue;
 }
