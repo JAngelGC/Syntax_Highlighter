@@ -1,3 +1,4 @@
 #Erlang generated automaton
 syntax/src/lexer.erl
 syntax/mix.lock
+syntax/htmlFile.txt
