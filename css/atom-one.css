@@ -1,0 +1,102 @@
+:root {
+  --comment: #808080;
+  --data-type: #56b6c2;
+  --number: #d19a66;
+  --string: #98c379;
+  --assign: #c678dd;
+  --operator: #c678dd;
+  --relation: #c678dd;
+  --logical: #c678dd;
+  --identifier: #a9b0bc;
+
+  --placeholder: #c678dd;
+
+  /* --method: hsl(187, 47%, 55%);
+  --functn: hsl(207, 82%, 66%);
+  --instrc: hsl(286, 60%, 67%);
+  --operat: hsl(286, 60%, 67%); */
+
+  /* --instruction: hsl(355, 65%, 65%);
+  --instruction: hsl(  5, 48%, 51%);
+
+  --instruction: hsl( 29, 54%, 61%);
+  --instruction: hsl( 39, 67%, 69%); */
+}
+
+body {
+  background-color: #282c34;
+}
+
+pre {
+  font-family: 'Fira Mono';
+  /* background-color: tomato; */
+}
+
+span {
+  /* white-space: pre-line; */
+  white-space: pre;
+  color: Red;
+  display: inline;
+}
+
+.comment {
+  color: var(--comment);
+}
+
+.data-type {
+  color: var(--data-type);
+}
+.number {
+  color: var(--number);
+}
+.string {
+  color: var(--string);
+}
+.assign {
+  color: var(--assign);
+}
+.operator {
+  color: var(--operator);
+}
+.relation {
+  color: var(--relation);
+}
+.logical {
+  color: var(--logical);
+}
+.identifier {
+  color: var(--identifier);
+}
+
+
+
+/* // Config -----------------------------------
+@syntax-hue:          220;
+@syntax-saturation:   13%;
+@syntax-brightness:   18%;
+
+
+// Monochrome -----------------------------------
+@mono-1: hsl(@syntax-hue, 14%, 71%); // default text
+@mono-2: hsl(@syntax-hue,  9%, 55%);
+@mono-3: hsl(@syntax-hue, 10%, 40%);
+
+// Colors -----------------------------------
+@hue-1:   hsl(187, 47%, 55%); // <-cyan
+@hue-2:   hsl(207, 82%, 66%); // <-blue
+@hue-3:   hsl(286, 60%, 67%); // <-purple
+@hue-4:   hsl( 95, 38%, 62%); // <-green
+
+@hue-5:   hsl(355, 65%, 65%); // <-red 1
+@hue-5-2: hsl(  5, 48%, 51%); // <-red 2
+
+@hue-6:   hsl( 29, 54%, 61%); // <-orange 1
+@hue-6-2: hsl( 39, 67%, 69%); // <-orange 2
+
+
+// Base colors -----------------------------------
+@syntax-fg:     @mono-1;
+@syntax-bg:     hsl(@syntax-hue, @syntax-saturation, @syntax-brightness);
+@syntax-gutter: darken(@syntax-fg, 26%);
+@syntax-guide:  fade(@syntax-fg, 15%);
+@syntax-accent: hsl(@syntax-hue, 100%, 66% ); */
