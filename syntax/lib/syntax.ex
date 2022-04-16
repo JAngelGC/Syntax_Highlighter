@@ -4,8 +4,14 @@ defmodule Syntax do
   # Syntax.format(elem(:lexer.string('area = pi * radio ** 2'),1))
   # tokens = [{:identifier, 'area'}, {:operator, '='}, {:identifier, 'pi'}, {:operator, '*'}, {:identifier, 'radio'}, {:operator, '**'}, {:int, '2'}]
   # Syntax.format(elem(:lexer.string('  '),1))
+  def read(file) do
+    File.read!(file)
+    |> String.to_charlist()
+    |> syntax()
+  end
 
   def syntax(text) do
+
     htmlStr = format(elem(:lexer.string(text),1))
     File.write("htmlFile.txt", htmlStr) #Ponemos el resultado en un archivo
   end
