@@ -29,8 +29,8 @@ bool                            :{token, {data_type,  TokenChars}}.
 {D}+                            :{token, {int,  TokenChars}}.
 {D}+\.{D}*f?                    :{token, {float,  TokenChars}}.
 {D}+\.{D}*e[+\-]?{D}+f?         :{token, {float,  TokenChars}}.
-"({AL}|{WS}|{PUNCT})+"          :{token, {data, TokenChars}}.
-'{L}'                           :{token, {data, TokenChars}}.
+"({AL}|{WS}|{PUNCT})+"          :{token, {string, TokenChars}}.
+'{L}'                           :{token, {char, TokenChars}}.
 
 % Keywords (first round)
 auto                            :{token, {keyword, TokenChars}}.
@@ -96,7 +96,7 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 
 
 % Functions
-
+% Manejar para que las funciones las marque con este color 61afef
 
 
 
