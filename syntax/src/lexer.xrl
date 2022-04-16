@@ -11,7 +11,9 @@ Rules.
 
 % Notas
 % Si dos string coinciden con el patron de la regex, toma el que este mas arriba
-
+% Comments
+\//.*                          :{token, {comment,  TokenChars}}.
+\/\*({AL}|{WS}|{PUNCT})+\*\/   :{token, {comment,  TokenChars}}.
 
 % Data types
 % Keyword
@@ -125,7 +127,14 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 &&                              :{token, {logical, TokenChars}}.
 \|\|                            :{token, {logical, TokenChars}}.
 !                               :{token, {logical, TokenChars}}.
-[\(\)]                          :{token, {logical, TokenChars}}.
+
+% AGRUPACION
+[\(\)]                          :{token, {more, TokenChars}}.
+[\{\}]                          :{token, {more, TokenChars}}.
+::                              :{token, {more, TokenChars}}.
+<<                              :{token, {more, TokenChars}}.
+>>                              :{token, {more, TokenChars}}.
+;                              :{token, {more, TokenChars}}.
 
 
 
