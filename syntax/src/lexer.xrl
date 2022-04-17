@@ -6,7 +6,7 @@ WS = (\n|\t|\"?"?|\\|\s)
 PUNCT = [/*-+~!@#$%^&*()-=_+[\]{}\|:""''<>?,./]
 
 Rules.
-[\s\t]+                             :{token, {space,  TokenChars}}.
+[\s\t]+                        :{token, {space,  TokenChars}}.
 \n                             :{token, {newline,  TokenChars}}.
 
 % Notas
@@ -137,14 +137,12 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 ::                              :{token, {more, TokenChars}}.
 <<                              :{token, {more, TokenChars}}.
 >>                              :{token, {more, TokenChars}}.
-;                              :{token, {more, TokenChars}}.
+;                               :{token, {more, TokenChars}}.
 
 
-
-% Keywords
 % Include
 #(include)                      :{token, {include, TokenChars}}.
-<{LE}+.?{LE}*>                    :{token, {header, TokenChars}}.
+<{LE}+.?{LE}*>                  :{token, {header, TokenChars}}.
 
 
 % Identifiers
@@ -155,6 +153,9 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 
 % Pruebas de Angel
 hola                          :{token, {titlePrueba,  TokenChars}}.
+
+
+
 
 Erlang code.
 

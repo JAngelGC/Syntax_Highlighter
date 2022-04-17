@@ -2,16 +2,10 @@
 --- FONT SIZES (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
---- SHADOWS
-0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
-
---- BORDER-RADIUS
-Default: 9px
-Medium: 11px
 
 --- WHITESPACE
 - Spacing system (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
 */
 
 * {
@@ -32,7 +26,6 @@ body {
   line-height: 1;
   font-weight: 300;
   font-family: "Montserrat", sans-serif;
-
   overflow-x: hidden;
 }
 
@@ -46,7 +39,6 @@ header {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  /* flex-direction: column; */
 }
 
 header h1 {
@@ -57,7 +49,6 @@ header h1 {
 header h1 strong {
   font-size: 3rem;
   font-weight: 500;
-  /* background-color: violet; */
 }
 
 main {
@@ -114,27 +105,40 @@ span {
   display: inline;
 }
 
-.identifier {
-  color: #abb2bf;
-}
-
-.keyword,
-.operator,
-.include {
-  color: #c678dd;
-}
-
-.int {
-  color: #d19a66;
-}
-
-.string,
-.header {
-  color: #98c379;
+.comment {
+  color: #5c6370;
+  font-style: italic;
 }
 
 .data-type {
   color: #56b5c1;
+}
+
+.int,
+.float {
+  color: #d19a66;
+}
+
+.string,
+.char,
+.header {
+  color: #98c379;
+}
+
+/* NOTA: Los (),[], {}, ; salen de color por el more, pero no deben de */
+
+.keyword,
+.assign,
+.operator,
+.relation,
+.logical,
+.more,
+.include {
+  color: #c678dd;
+}
+
+.identifier {
+  color: #abb2bf;
 }
 
 /* https://devforum.roblox.com/t/atom-one-dark-colors/827415/3 */
