@@ -69,6 +69,10 @@ main {
   padding-top: 5rem;
 }
 
+main .container code pre {
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+}
+
 footer {
   height: 7vh;
   background-color: #252930;
