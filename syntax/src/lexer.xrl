@@ -2,16 +2,17 @@ Definitions.
 D = [0-9]
 LE = [A-Za-z]
 AL = [0-9A-Za-z]
-WS = (\n|\t|\"?"?|\\|\s)
+WS = (\n|\t|\?"?|\\|\s)
 PUNCT = [/*-+~!@#$%^&*()-=_+[\]{}\|:""''<>?,./]
+PUNCTNOQUOTES = [/*-+~!@#$%^&*()-=_+[\]{}\|:''<>?,./]
 
 Rules.
 [\s\t]+                        :{token, {space,  TokenChars}}.
 \n                             :{token, {newline,  TokenChars}}.
 
 % Notas
-% Si dos string coinciden con el patron de la regex, toma el que este mas arriba
-% Se truena cuando le ponemos una string
+% Falta checar para lo de las funciones, aunque es en realidad un identificador???
+% OOP??
 
 
 % Comments
@@ -32,7 +33,7 @@ bool                            :{token, {data_type,  TokenChars}}.
 {D}+                            :{token, {int,  TokenChars}}.
 {D}+\.{D}*f?                    :{token, {float,  TokenChars}}.
 {D}+\.{D}*e[+\-]?{D}+f?         :{token, {float,  TokenChars}}.
-"({AL}|{WS}|{PUNCT})+"          :{token, {string, TokenChars}}.
+"({AL}|{WS}|{PUNCTNOQUOTES})+"  :{token, {string, TokenChars}}.
 '{L}'                           :{token, {char, TokenChars}}.
 
 % Keywords (first round)

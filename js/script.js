@@ -2,6 +2,9 @@ const insertHtmlCode = function () {
   fetch("../syntax/htmlFile.txt")
     .then((response) => response.text())
     .then((data) => {
+      console.log(data);
+      console.log("-----------------");
+
       const newData = data.split(",").join("");
       console.log(newData);
 
