@@ -11,6 +11,9 @@ Rules.
 
 % Notas
 % Si dos string coinciden con el patron de la regex, toma el que este mas arriba
+% Se truena cuando le ponemos una string
+
+
 % Comments
 \//.*                          :{token, {comment,  TokenChars}}.
 \/\*({AL}|{WS}|{PUNCT})+\*\/   :{token, {comment,  TokenChars}}.
