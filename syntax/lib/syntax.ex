@@ -30,12 +30,22 @@ defmodule Syntax do
         :newline -> "<span class='newline'><br></span>"
         :comment -> "<span class='comment'>#{tchars}</span>"
         :data_type -> "<span class='data-type'>#{tchars}</span>"
+<<<<<<< HEAD
         :number -> "<span class='number'>#{tchars}</span>"
         :string -> "<span class='string'>#{tchars}</span>"
+=======
+        :int -> "<span class='int'>#{tchars}</span>"
+        :float -> "<span class='float'>#{tchars}</span>"
+        :string -> "<span class='string'>#{tchars}</span>"
+        :char -> "<span class='char'>#{tchars}</span>"
+        :keyword -> "<span class='keyword'>#{tchars}</span>"
+        :keywordBool -> "<span class='keyword-bool'>#{tchars}</span>"
+>>>>>>> 00617db6fc89e8ece0da498b5aafdb5b1e76e952
         :assign -> "<span class='assign'>#{tchars}</span>"
         :operator -> "<span class='operator'>#{tchars}</span>"
         :relation -> "<span class='relation'>#{tchars}</span>"
         :logical -> "<span class='logical'>#{tchars}</span>"
+<<<<<<< HEAD
         :include -> "<span class='include'>#{tchars}</span>"
         :header -> "<span class='header'>#{tchars}</span>"
         
@@ -43,6 +53,12 @@ defmodule Syntax do
         :keyword -> "<span class='keyword'>#{tchars}</span>"
         :identifier -> "<span class='identifier'>#{tchars}</span>"
         :data_type -> "<span class='data-type'>#{tchars}</span>"
+=======
+        :more -> "<span class='more'>#{tchars}</span>"
+        :include -> "<span class='include'>#{tchars}</span>"
+        :header -> "<span class='header'>#{tchars}</span>"
+        :identifier -> "<span class='identifier'>#{tchars}</span>"
+>>>>>>> 00617db6fc89e8ece0da498b5aafdb5b1e76e952
         _ -> "<span>#{tchars}</span>"
       end
     end)

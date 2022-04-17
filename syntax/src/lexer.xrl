@@ -4,15 +4,20 @@ LE = [A-Za-z]
 AL = [0-9A-Za-z]
 WS = (\n|\t|\"?"?|\\|\s)
 PUNCT = [/*-+~!@#$%^&*()-=_+[\]{}\|:""''<>?,./]
+PUNCTNOQUOTES = [/*-+~!@#$%^&*()-=_+[\]{}\|:''<>?,./]
 
 % Notas
 % Si dos string coinciden con el patron de la regex, toma el que este mas arriba
 Rules.
-% SPACES
 [\s\t]+                        :{token, {space,  TokenChars}}.
 \n                             :{token, {newline,  TokenChars}}.
 
-% COMMENTS
+% Notas
+% Falta checar para lo de las funciones, aunque es en realidad un identificador???
+% OOP??
+
+
+% Comments
 \//.*                          :{token, {comment,  TokenChars}}.
 \/\*({AL}|{WS}|{PUNCT})+\*\/   :{token, {comment,  TokenChars}}.
 
@@ -27,11 +32,11 @@ double                          :{token, {data_type,  TokenChars}}.
 bool                            :{token, {data_type,  TokenChars}}.
 
 % Values
-{D}+                            :{token, {number,  TokenChars}}.
-{D}+\.{D}*f?                    :{token, {number,  TokenChars}}.
-{D}+\.{D}*e[+\-]?{D}+f?         :{token, {number,  TokenChars}}.
-"({AL}|{WS}|{PUNCT})+"          :{token, {string, TokenChars}}.
-'{L}'                           :{token, {string, TokenChars}}.
+{D}+                            :{token, {int,  TokenChars}}.
+{D}+\.{D}*f?                    :{token, {float,  TokenChars}}.
+{D}+\.{D}*e[+\-]?{D}+f?         :{token, {float,  TokenChars}}.
+"({AL}|{WS}|{PUNCTNOQUOTES})+"  :{token, {string, TokenChars}}.
+'{L}'                           :{token, {char, TokenChars}}.
 
 % CONDITIONALS
 if                              :{token, {keyword, TokenChars}}.
@@ -74,7 +79,6 @@ delete                          :{token, {keyword, TokenChars}}.
 dynamic_cast                    :{token, {keyword, TokenChars}}.
 explicit                        :{token, {keyword, TokenChars}}.
 export                          :{token, {keyword, TokenChars}}.
-false                           :{token, {keyword, TokenChars}}.
 friend                          :{token, {keyword, TokenChars}}.
 inline                          :{token, {keyword, TokenChars}}.
 mutable                         :{token, {keyword, TokenChars}}.
@@ -89,7 +93,7 @@ static_cast                     :{token, {keyword, TokenChars}}.
 template                        :{token, {keyword, TokenChars}}.
 this                            :{token, {keyword, TokenChars}}.
 throw                           :{token, {keyword, TokenChars}}.
-true                            :{token, {keyword, TokenChars}}.
+
 try                             :{token, {keyword, TokenChars}}.
 typeid                          :{token, {keyword, TokenChars}}.
 typename                        :{token, {keyword, TokenChars}}.
@@ -97,6 +101,10 @@ using                           :{token, {keyword, TokenChars}}.
 virtual                         :{token, {keyword, TokenChars}}.
 wchar_t                         :{token, {keyword, TokenChars}}.
 
+
+
+true                            :{token, {keywordBool, TokenChars}}.
+false                           :{token, {keywordBool, TokenChars}}.
 
 % Functions
 % Manejar para que las funciones las marque con este color 61afef
@@ -132,19 +140,17 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 !                               :{token, {logical, TokenChars}}.
 
 % AGRUPACION
-[\(\)]                          :{token, {more, TokenChars}}.
-[\{\}]                          :{token, {more, TokenChars}}.
+[\(\)]                          :{token, {more2, TokenChars}}.
+[\{\}]                          :{token, {more2, TokenChars}}.
 ::                              :{token, {more, TokenChars}}.
 <<                              :{token, {more, TokenChars}}.
 >>                              :{token, {more, TokenChars}}.
-;                              :{token, {more, TokenChars}}.
+;                               :{token, {more2, TokenChars}}.
 
 
-
-% Keywords
 % Include
 #(include)                      :{token, {include, TokenChars}}.
-<{LE}+.?{LE}*>                    :{token, {header, TokenChars}}.
+<{LE}+.?{LE}*>                  :{token, {header, TokenChars}}.
 
 
 % Identifiers
@@ -155,6 +161,9 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 
 % Pruebas de Angel
 hola                          :{token, {titlePrueba,  TokenChars}}.
+
+
+
 
 Erlang code.
 
