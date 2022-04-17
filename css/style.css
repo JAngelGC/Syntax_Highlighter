@@ -65,6 +65,7 @@ main {
 }
 
 main .container code pre {
+  line-height: 1.5;
   font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
 }
 
@@ -119,7 +120,8 @@ span {
 }
 
 .int,
-.float {
+.float,
+.keyword-bool {
   color: #d19a66;
 }
 

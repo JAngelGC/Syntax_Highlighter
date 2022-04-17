@@ -31,6 +31,7 @@ defmodule Syntax do
         :string -> "<span class='string'>#{tchars}</span>"
         :char -> "<span class='char'>#{tchars}</span>"
         :keyword -> "<span class='keyword'>#{tchars}</span>"
+        :keywordBool -> "<span class='keyword-bool'>#{tchars}</span>"
         :assign -> "<span class='assign'>#{tchars}</span>"
         :operator -> "<span class='operator'>#{tchars}</span>"
         :relation -> "<span class='relation'>#{tchars}</span>"

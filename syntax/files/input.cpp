@@ -1,45 +1,22 @@
+// Your First C++ Program
+
+
 #include <iostream>
+#include <string>
 
-using namespace std;
+int main() {
+    string str1 = "Hello World!";
+    string str2 = "hola mundo";
 
+    int x = 2 + 1;
+    int y = 40 * 5;
 
-int factorialIterativo(int number){
+    float num = 3.1;
 
-    int acumulado = 1;
-    for(int i=number; i>0; i--){
-        acumulado = acumulado * i;
-    }
+    /* Hola
 
-    return acumulado;
-}
+    probando
 
-
-int factorialRecursivo(int number){
-
-    if(number==1 )
-        return 1;
-
-    return number * factorialRecursivo(number-1);
-}
-
-
-
-
-int main(){
-
-    cout << "\n-------------------------" << endl;
-
-    int numero = 6;
-
-
-
-    cout << "El factorial ITERATIVO de " << numero << " es: " << factorialIterativo(numero) << endl;
-
-    cout << "El factorial RECURSIVO de " << numero << " es: " << factorialRecursivo(numero) << endl;
-
-    
-
-    cout << "\n-------------------------" << endl;
-
+    */    
     return 0;
 }

@@ -75,7 +75,6 @@ delete                          :{token, {keyword, TokenChars}}.
 dynamic_cast                    :{token, {keyword, TokenChars}}.
 explicit                        :{token, {keyword, TokenChars}}.
 export                          :{token, {keyword, TokenChars}}.
-false                           :{token, {keyword, TokenChars}}.
 friend                          :{token, {keyword, TokenChars}}.
 inline                          :{token, {keyword, TokenChars}}.
 mutable                         :{token, {keyword, TokenChars}}.
@@ -90,7 +89,7 @@ static_cast                     :{token, {keyword, TokenChars}}.
 template                        :{token, {keyword, TokenChars}}.
 this                            :{token, {keyword, TokenChars}}.
 throw                           :{token, {keyword, TokenChars}}.
-true                            :{token, {keyword, TokenChars}}.
+
 try                             :{token, {keyword, TokenChars}}.
 typeid                          :{token, {keyword, TokenChars}}.
 typename                        :{token, {keyword, TokenChars}}.
@@ -98,6 +97,10 @@ using                           :{token, {keyword, TokenChars}}.
 virtual                         :{token, {keyword, TokenChars}}.
 wchar_t                         :{token, {keyword, TokenChars}}.
 
+
+
+true                            :{token, {keywordBool, TokenChars}}.
+false                           :{token, {keywordBool, TokenChars}}.
 
 % Functions
 % Manejar para que las funciones las marque con este color 61afef
@@ -133,12 +136,12 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 !                               :{token, {logical, TokenChars}}.
 
 % AGRUPACION
-[\(\)]                          :{token, {more, TokenChars}}.
-[\{\}]                          :{token, {more, TokenChars}}.
+[\(\)]                          :{token, {more2, TokenChars}}.
+[\{\}]                          :{token, {more2, TokenChars}}.
 ::                              :{token, {more, TokenChars}}.
 <<                              :{token, {more, TokenChars}}.
 >>                              :{token, {more, TokenChars}}.
-;                               :{token, {more, TokenChars}}.
+;                               :{token, {more2, TokenChars}}.
 
 
 % Include
