@@ -4,19 +4,40 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+void calcular(int x, int y) {
+  float a = x + y;
+}
+
 int main() {
     string str1 = "Hello World!";
     string str2 = "hola mundo";
 
+    int i = 0, count = 0;
     int x = 2 + 1;
     int y = 40 * 5;
 
     float num = 3.1;
+    string result = (time < 18) ? "Good day." : "Good evening.";
 
-    /* Hola
+    /*Holapr
+    \~\!\@\#\+\$\\\-\(\)\{\}
+    int i = 0, count = 0;
+    int x = 2 + 1;
+    int y = 40 * 5;
+    obando*/
 
-    probando
 
-    */    
+    calcular(x,y);
+
+    do {
+      cout << i << "\n";
+      i++;
+    }
+    while (i < 5);
+
+    for (size_t i = 0; i < count; i++) {
+      /* code */
+    }
     return 0;
 }
