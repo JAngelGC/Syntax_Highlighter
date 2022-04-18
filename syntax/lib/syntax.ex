@@ -48,6 +48,7 @@ defmodule Syntax do
         :group -> "<span class='group'>#{tchars}</span>"
 
         # PUNCTUATION
+        :punctuationColor -> "<span class='punctuation-color'>#{tchars}</span>"
         :punctuation -> "<span class='punctuation'>#{tchars}</span>"
 
         # HEADERS
