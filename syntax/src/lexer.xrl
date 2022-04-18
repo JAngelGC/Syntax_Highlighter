@@ -162,13 +162,6 @@ namespace                       :{token, {include, TokenChars}}.
 [_A-Za-z]+[_0-9A-Za-z]*         :{token, {identifier,  TokenChars}}.
 
 
-
-
-% Pruebas de Angel
-
-
-
-
 Erlang code.
 
 

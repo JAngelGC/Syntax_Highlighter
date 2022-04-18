@@ -1,12 +1,6 @@
 defmodule Syntax do
-  # area = pi * radio ** 2
   # :lexer.string('area = pi * radio ** 2')
   # Syntax.format(elem(:lexer.string('area = pi * radio ** 2'),1))
-  # tokens = [{:identifier, 'area'}, {:operator, '='}, {:identifier, 'pi'}, {:operator, '*'}, {:identifier, 'radio'}, {:operator, '**'}, {:int, '2'}]
-#   Syntax.format(elem(:lexer.string('//Hola
-#   // Your First C++ Program
-# a = 1 + b;
-#   '),1))
 
   def read(file) do
     File.read!(file)
@@ -26,39 +20,47 @@ defmodule Syntax do
       tchars = HtmlEntities.encode(tchars)
 
       case token do
+        # WHITESPACE
         :space -> "<span class='space'>#{tchars}</span>"
         :newline -> "<span class='newline'><br></span>"
+
+        # COMMENTS
         :comment -> "<span class='comment'>#{tchars}</span>"
+
+        # DATA
         :data_type -> "<span class='data-type'>#{tchars}</span>"
-<<<<<<< HEAD
-        :number -> "<span class='number'>#{tchars}</span>"
-        :string -> "<span class='string'>#{tchars}</span>"
-=======
         :int -> "<span class='int'>#{tchars}</span>"
         :float -> "<span class='float'>#{tchars}</span>"
         :string -> "<span class='string'>#{tchars}</span>"
         :char -> "<span class='char'>#{tchars}</span>"
-        :keyword -> "<span class='keyword'>#{tchars}</span>"
         :keywordBool -> "<span class='keyword-bool'>#{tchars}</span>"
->>>>>>> 00617db6fc89e8ece0da498b5aafdb5b1e76e952
+
+        # CONDITIONALS
+        :conditional -> "<span class='conditional'>#{tchars}</span>"
+
+        # OPERATORS
         :assign -> "<span class='assign'>#{tchars}</span>"
-        :operator -> "<span class='operator'>#{tchars}</span>"
+        :arithmetic -> "<span class='arithmetic'>#{tchars}</span>"
         :relation -> "<span class='relation'>#{tchars}</span>"
         :logical -> "<span class='logical'>#{tchars}</span>"
-<<<<<<< HEAD
+
+        # GROUPS
+        :group -> "<span class='group'>#{tchars}</span>"
+
+        # PUNCTUATION
+        :punctuation -> "<span class='punctuation'>#{tchars}</span>"
+
+        # HEADERS
         :include -> "<span class='include'>#{tchars}</span>"
         :header -> "<span class='header'>#{tchars}</span>"
-        
+
 
         :keyword -> "<span class='keyword'>#{tchars}</span>"
+
+        # IDENTIFIERS AND FUNCTIONS
+        # TODO: Parse function name from opening parentheses
+        :function -> "<span class='function'>#{tchars}</span>"
         :identifier -> "<span class='identifier'>#{tchars}</span>"
-        :data_type -> "<span class='data-type'>#{tchars}</span>"
-=======
-        :more -> "<span class='more'>#{tchars}</span>"
-        :include -> "<span class='include'>#{tchars}</span>"
-        :header -> "<span class='header'>#{tchars}</span>"
-        :identifier -> "<span class='identifier'>#{tchars}</span>"
->>>>>>> 00617db6fc89e8ece0da498b5aafdb5b1e76e952
         _ -> "<span>#{tchars}</span>"
       end
     end)
