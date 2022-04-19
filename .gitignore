@@ -3,3 +3,6 @@ syntax/src/lexer.erl
 syntax/mix.lock
 syntax/htmlFile.txt
 syntax/files/act*.cpp
+
+# Compilation files
+*.o
