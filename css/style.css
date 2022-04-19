@@ -104,48 +104,63 @@ footer .container-icon a:hover {
 /* STYLES FOR THE CODE */
 /* ------------------------- */
 
+:root {
+  --number: #d19a66;
+  --string: #98c379;
+  --normal: #abb2bf;
+  --keyword: #c678dd;
+  --builtin: #56b6c2;
+  --definition: #61afef;
+  --comment: #5c6370;
+  --ocurrence: #434957;
+}
+
 span {
   white-space: pre;
-  color: #abb2bf;
+  color: var(--normal);
   display: inline;
 }
 
 .comment {
-  color: #5c6370;
+  color: var(--comment);
   font-style: italic;
 }
 
 .data-type {
-  color: #56b5c1;
+  color: var(--builtin);
 }
 
 .int,
 .float,
 .keyword-bool {
-  color: #d19a66;
+  color: var(--number);
 }
 
 .string,
 .char,
 .header {
-  color: #98c379;
+  color: var(--string);
 }
-
-/* NOTA: Los (),[], {}, ; salen de color por el more, pero no deben de */
 
 .conditional,
-.keyword,
 .assign,
-.operator,
+.arithmetic,
 .relation,
 .logical,
-.more,
-.include {
-  color: #c678dd;
+.punctuation-color,
+.include,
+.keyword {
+  color: var(--keyword);
 }
 
+.group,
+.punctuation,
 .identifier {
-  color: #abb2bf;
+  color: var(--normal);
+}
+
+.function {
+  color: var(--definition);
 }
 
 /* https://devforum.roblox.com/t/atom-one-dark-colors/827415/3 */

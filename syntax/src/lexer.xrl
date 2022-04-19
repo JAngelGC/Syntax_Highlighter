@@ -142,9 +142,9 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 [\[\]]                          :{token, {group, TokenChars}}.
 
 % PUNCTUATION
-::                              :{token, {punctuation, TokenChars}}.
-<<                              :{token, {punctuation, TokenChars}}.
->>                              :{token, {punctuation, TokenChars}}.
+::                              :{token, {punctuationColor, TokenChars}}.
+<<                              :{token, {punctuationColor, TokenChars}}.
+>>                              :{token, {punctuationColor, TokenChars}}.
 ;                               :{token, {punctuation, TokenChars}}.
 .                               :{token, {punctuation, TokenChars}}.
 
