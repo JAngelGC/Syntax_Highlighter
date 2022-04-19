@@ -184,7 +184,8 @@ defmodule Syntax do
             .logical,
             .punctuation-color,
             .include,
-            .keyword {
+            .keyword,
+            .reference {
               color: var(--keyword);
             }
 
@@ -275,6 +276,7 @@ defmodule Syntax do
 
 
         :keyword -> "<span class='keyword'>#{tchars}</span>"
+        :reference -> "<span class='reference'>#{tchars}</span>"
 
         # IDENTIFIERS AND FUNCTIONS
         # TODO: Parse function name from opening parentheses
