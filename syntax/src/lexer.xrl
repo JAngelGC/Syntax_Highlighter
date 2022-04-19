@@ -15,33 +15,35 @@ PUNCTNOSTAR = [/*-+~!@#$%^&*()-=_+[\]{}\|:""''<>?,./][^(*/)]
 
 Rules.
 % WHITESPACE
-[\s\t]+                        :{token, {space,  TokenChars}}.
-\n                             :{token, {newline,  TokenChars}}.
+[\s\t]+                        :{token, {space, TokenChars}}.
+\n                             :{token, {newline, TokenChars}}.
 
 % COMMENTS
-\//.*                          :{token, {comment,  TokenChars}}.
+\//.*                          :{token, {comment, TokenChars}}.
 \/\*({AL}|{WS}|{PUNCTNOSTAR})+\*\/ :{token, {comment, TokenChars}}.
 
 % DATA
 % Types
 void                            :{token, {data_type, TokenChars}}.
-int                             :{token, {data_type,  TokenChars}}.
-float                           :{token, {data_type,  TokenChars}}.
-string                          :{token, {data_type,  TokenChars}}.
-char                            :{token, {data_type,  TokenChars}}.
-double                          :{token, {data_type,  TokenChars}}.
-bool                            :{token, {data_type,  TokenChars}}.
+int                             :{token, {data_type, TokenChars}}.
+float                           :{token, {data_type, TokenChars}}.
+string                          :{token, {data_type, TokenChars}}.
+char                            :{token, {data_type, TokenChars}}.
+double                          :{token, {data_type, TokenChars}}.
+bool                            :{token, {data_type, TokenChars}}.
 long                            :{token, {data_type, TokenChars}}.
 short                           :{token, {data_type, TokenChars}}.
 signed                          :{token, {data_type, TokenChars}}.
 unsigned                        :{token, {data_type, TokenChars}}.
 
 % Values
-{D}+                            :{token, {int,  TokenChars}}.
-{D}+\.{D}*f?                    :{token, {float,  TokenChars}}.
-{D}+\.{D}*e[+\-]?{D}+f?         :{token, {float,  TokenChars}}.
-"({AL}|{WS}|{PUNCTNOQUOTES})*?"  :{token, {string, TokenChars}}.
-'{LE}'                           :{token, {char, TokenChars}}.
+{D}+                            :{token, {int, TokenChars}}.
+0b?{D}+                         :{token, {int, TokenChars}}.
+0x[0-9a-fA-F]+                  :{token, {int, TokenChars}}.
+{D}+\.{D}*f?                    :{token, {float, TokenChars}}.
+{D}+\.{D}*e[+\-]?{D}+f?         :{token, {float, TokenChars}}.
+"({AL}|{WS}|{PUNCTNOQUOTES})*?" :{token, {string, TokenChars}}.
+'{LE}'                          :{token, {char, TokenChars}}.
 true                            :{token, {keywordBool, TokenChars}}.
 false                           :{token, {keywordBool, TokenChars}}.
 
@@ -146,7 +148,8 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 <<                              :{token, {punctuationColor, TokenChars}}.
 >>                              :{token, {punctuationColor, TokenChars}}.
 ;                               :{token, {punctuation, TokenChars}}.
-.                               :{token, {punctuation, TokenChars}}.
+\.                               :{token, {punctuation, TokenChars}}.
+,                               :{token, {punctuation, TokenChars}}.
 
 
 
@@ -158,8 +161,8 @@ namespace                       :{token, {include, TokenChars}}.
 
 
 % Identifiers
-([_A-Za-z]+[_0-9A-Za-z]*)\(         :{token, {function,  TokenChars}}.
-[_A-Za-z]+[_0-9A-Za-z]*         :{token, {identifier,  TokenChars}}.
+([_A-Za-z]+[_0-9A-Za-z]*)\(         :{token, {function, TokenChars}}.
+[_A-Za-z]+[_0-9A-Za-z]*         :{token, {identifier, TokenChars}}.
 
 
 Erlang code.
