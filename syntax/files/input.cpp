@@ -16,6 +16,9 @@ int main() {
     int i = 0, count = 0;
     int x = 2 + 1;
     int y = 40 * 5;
+    int bin = 0b11000;
+    int hex = 0xf;
+    int octal = 017;
 
     char prueba = 'A';
 
