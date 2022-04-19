@@ -1,0 +1,216 @@
+
+    <!DOCTYPE html>
+      <html lang='en'>
+        <head>
+          <meta charset='UTF-8' />
+          <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+          <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+          <title>Syntax highlighter for C++</title>
+
+          <script
+            src='https://kit.fontawesome.com/96bb550736.js'
+            crossorigin='anonymous'
+          ></script>
+          <link
+            rel='stylesheet'
+            href='https://fonts.googleapis.com/css?family=Fira Mono'
+          />
+          <link rel='preconnect' href='https://fonts.googleapis.com' />
+          <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap'
+            rel='stylesheet'
+          />
+
+          <style>
+            * {
+              padding: 0;
+              margin: 0;
+              box-sizing: border-box;
+            }
+
+            html {
+              /* font-size: 10px; */
+              /* 10px / 16px = 0.625 = 62.5% */
+              /* Percentage of user's browser font-size setting */
+              font-size: 62.5%;
+              overflow-x: hidden;
+            }
+
+            ::selection {
+              background: #434957;
+            }
+
+            body {
+              line-height: 1;
+              font-weight: 300;
+              font-family: 'Montserrat', sans-serif;
+              overflow-x: hidden;
+            }
+
+            header {
+              height: 15vh;
+              background-color: #1d1f25;
+
+              color: #f3f3f3;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 1rem;
+            }
+
+            header h1 {
+              font-size: 3.6rem;
+              font-weight: 600;
+            }
+
+            header h1 strong {
+              font-size: 3rem;
+              font-weight: 500;
+            }
+
+            main {
+              font-size: 1.8rem;
+              background-color: #282c34;
+
+              min-height: 78vh;
+              padding-left: 5rem;
+              padding-top: 5rem;
+            }
+
+            main .container code pre {
+              line-height: 1.5;
+              font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+            }
+
+            footer {
+              height: 7vh;
+              background-color: #252930;
+              color: #f3f3f3;
+
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+
+            footer .container-names {
+              margin-left: 5rem;
+
+              font-size: 1.2rem;
+            }
+
+            footer .container-icon {
+              margin-right: 5rem;
+            }
+
+            footer .container-icon a {
+              color: #f3f3f3;
+              font-size: 2.6rem;
+
+              transition: all 0.2s;
+            }
+
+            footer .container-icon a:hover {
+              color: #2684ff;
+            }
+
+            /* ------------------------- */
+            /* STYLES FOR THE CODE */
+            /* ------------------------- */
+
+            :root {
+              --number: #d19a66;
+              --string: #98c379;
+              --normal: #abb2bf;
+              --keyword: #c678dd;
+              --builtin: #56b6c2;
+              --definition: #61afef;
+              --comment: #5c6370;
+              --ocurrence: #434957;
+            }
+
+            span {
+              white-space: pre;
+              color: var(--normal);
+              display: inline;
+            }
+
+            .comment {
+              color: var(--comment);
+              font-style: italic;
+            }
+
+            .data-type {
+              color: var(--builtin);
+            }
+
+            .int,
+            .float,
+            .keyword-bool {
+              color: var(--number);
+            }
+
+            .string,
+            .char,
+            .header {
+              color: var(--string);
+            }
+
+            .conditional,
+            .assign,
+            .arithmetic,
+            .relation,
+            .logical,
+            .punctuation-color,
+            .include,
+            .keyword {
+              color: var(--keyword);
+            }
+
+            .group,
+            .punctuation,
+            .identifier {
+              color: var(--normal);
+            }
+
+            .function {
+              color: var(--definition);
+            }
+          </style>
+          <script src='js/script.js'></script>
+        </head>
+        <body>
+          <header>
+            <h1>Syntax highlighter <strong>for C++</strong></h1>
+          </header>
+
+          <main>
+            <div class='container'>
+              <code>
+                <pre id='insert'><span class='comment'>// Your First C++ Program</span><span class='newline'><br></span><span class='newline'><br></span><span class='newline'><br></span><span class='include'>#include</span><span class='space'> </span><span class='header'>&lt;iostream&gt;</span><span class='newline'><br></span><span class='include'>#include</span><span class='space'> </span><span class='header'>&lt;string&gt;</span><span class='newline'><br></span><span class='newline'><br></span><span class='include'>using</span><span class='space'> </span><span class='include'>namespace</span><span class='space'> </span><span class='identifier'>std</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='data-type'>void</span><span class='space'> </span><span class='function'>calcular(</span><span class='data-type'>int</span><span class='space'> </span><span class='punctuation'>x</span><span class='punctuation'>,</span><span class='space'> </span><span class='data-type'>int</span><span class='space'> </span><span class='punctuation'>y</span><span class='group'>)</span><span class='space'> </span><span class='group'>{</span><span class='newline'><br></span><span class='space'>  </span><span class='data-type'>float</span><span class='space'> </span><span class='punctuation'>a</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='punctuation'>x</span><span class='space'> </span><span class='arithmetic'>+</span><span class='space'> </span><span class='punctuation'>y</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='group'>}</span><span class='newline'><br></span><span class='newline'><br></span><span class='data-type'>int</span><span class='space'> </span><span class='function'>main(</span><span class='group'>)</span><span class='space'> </span><span class='group'>{</span><span class='newline'><br></span><span class='space'>    </span><span class='data-type'>string</span><span class='space'> </span><span class='identifier'>str1</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='string'>&quot;Hello World!&quot;</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='space'>    </span><span class='data-type'>string</span><span class='space'> </span><span class='identifier'>str2</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='string'>&quot;hola mundo&quot;</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='newline'><br></span><span class='space'>    </span><span class='data-type'>int</span><span class='space'> </span><span class='punctuation'>i</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='int'>0</span><span class='punctuation'>,</span><span class='space'> </span><span class='identifier'>count</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='int'>0</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='space'>    </span><span class='data-type'>int</span><span class='space'> </span><span class='punctuation'>x</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='int'>2</span><span class='space'> </span><span class='arithmetic'>+</span><span class='space'> </span><span class='int'>1</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='space'>    </span><span class='data-type'>int</span><span class='space'> </span><span class='punctuation'>y</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='int'>40</span><span class='space'> </span><span class='arithmetic'>*</span><span class='space'> </span><span class='int'>5</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='newline'><br></span><span class='space'>    </span><span class='data-type'>char</span><span class='space'> </span><span class='identifier'>prueba</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='char'>&#39;A&#39;</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='newline'><br></span><span class='space'>    </span><span class='data-type'>float</span><span class='space'> </span><span class='identifier'>num</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='float'>3.1</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='space'>    </span><span class='data-type'>string</span><span class='space'> </span><span class='identifier'>result</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='group'>(</span><span class='punctuation'>x</span><span class='space'> </span><span class='relation'>&lt;</span><span class='space'> </span><span class='int'>18</span><span class='group'>)</span><span class='space'> </span><span class='conditional'>?</span><span class='space'> </span><span class='string'>&quot;Good day.&quot;</span><span class='space'> </span><span class='conditional'>:</span><span class='space'> </span><span class='string'>&quot;Good evening.&quot;</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='newline'><br></span><span class='space'>    </span><span class='comment'>/*Holapr
+    \~\!\@\#\+\$\\\-\(\)\{\}
+    int i = 0, count = 0;
+    int x = 2 + 1;
+    int y = 40 * 5;
+    obando*/</span><span class='newline'><br></span><span class='newline'><br></span><span class='newline'><br></span><span class='space'>    </span><span class='function'>calcular(</span><span class='punctuation'>x</span><span class='punctuation'>,</span><span class='punctuation'>y</span><span class='group'>)</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='newline'><br></span><span class='space'>    </span><span class='conditional'>do</span><span class='space'> </span><span class='group'>{</span><span class='newline'><br></span><span class='space'>      </span><span class='identifier'>cout</span><span class='space'> </span><span class='punctuation-color'>&lt;&lt;</span><span class='space'> </span><span class='punctuation'>i</span><span class='space'> </span><span class='punctuation-color'>&lt;&lt;</span><span class='space'> </span><span class='string'>&quot;\n&quot;</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='space'>      </span><span class='punctuation'>i</span><span class='arithmetic'>++</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='space'>    </span><span class='group'>}</span><span class='newline'><br></span><span class='space'>    </span><span class='conditional'>while</span><span class='space'> </span><span class='group'>(</span><span class='punctuation'>i</span><span class='space'> </span><span class='relation'>&lt;</span><span class='space'> </span><span class='int'>5</span><span class='group'>)</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='newline'><br></span><span class='space'>    </span><span class='conditional'>for</span><span class='space'> </span><span class='group'>(</span><span class='identifier'>size_t</span><span class='space'> </span><span class='punctuation'>i</span><span class='space'> </span><span class='assign'>=</span><span class='space'> </span><span class='int'>0</span><span class='punctuation'>;</span><span class='space'> </span><span class='punctuation'>i</span><span class='space'> </span><span class='relation'>&lt;</span><span class='space'> </span><span class='identifier'>count</span><span class='punctuation'>;</span><span class='space'> </span><span class='punctuation'>i</span><span class='arithmetic'>++</span><span class='group'>)</span><span class='space'> </span><span class='group'>{</span><span class='newline'><br></span><span class='space'>      </span><span class='comment'>/* code */</span><span class='newline'><br></span><span class='space'>    </span><span class='group'>}</span><span class='newline'><br></span><span class='space'>    </span><span class='conditional'>return</span><span class='space'> </span><span class='int'>0</span><span class='punctuation'>;</span><span class='newline'><br></span><span class='group'>}</span><span class='newline'><br></span>
+              </pre>
+              </code>
+            </div>
+          </main>
+
+          <footer>
+            <div class='container-names'>
+              Copyright © 2022 by Carlos Díaz & José Á. González
+            </div>
+            <div class='container-icon'>
+              <a
+                target='_blank'
+                href='https://bitbucket.org/di-az/syntaxhighlighter/src/main/syntax/'
+                ><i class='fa-brands fa-bitbucket'></i
+              ></a>
+            </div>
+          </footer>
+        </body>
+      </html>
+    
