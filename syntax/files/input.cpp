@@ -17,8 +17,10 @@ int main() {
     int x = 2 + 1;
     int y = 40 * 5;
 
+    char prueba = 'A';
+
     float num = 3.1;
-    string result = (time < 18) ? "Good day." : "Good evening.";
+    string result = (x < 18) ? "Good day." : "Good evening.";
 
     /*Holapr
     \~\!\@\#\+\$\\\-\(\)\{\}

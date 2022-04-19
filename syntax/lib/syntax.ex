@@ -4,12 +4,12 @@ defmodule Syntax do
 
   def read(file) do
     File.read!(file)
+    |> String.replace("'","\'")
     |> String.to_charlist()
     |> syntax()
   end
 
   def syntax(text) do
-
     htmlStr = format(elem(:lexer.string(text),1))
     File.write("htmlFile.txt", htmlStr) #Ponemos el resultado en un archivo
   end
@@ -17,6 +17,7 @@ defmodule Syntax do
   def format(tokens) do
     Enum.map(tokens, fn {token, tchars} ->
       tchars = List.to_string(tchars)
+      tchars = String.replace(tchars, "\'","'")
       tchars = HtmlEntities.encode(tchars)
 
       case token do

@@ -41,7 +41,7 @@ unsigned                        :{token, {data_type, TokenChars}}.
 {D}+\.{D}*f?                    :{token, {float,  TokenChars}}.
 {D}+\.{D}*e[+\-]?{D}+f?         :{token, {float,  TokenChars}}.
 "({AL}|{WS}|{PUNCTNOQUOTES})*?"  :{token, {string, TokenChars}}.
-'{L}'                           :{token, {char, TokenChars}}.
+'{LE}'                           :{token, {char, TokenChars}}.
 true                            :{token, {keywordBool, TokenChars}}.
 false                           :{token, {keywordBool, TokenChars}}.
 
