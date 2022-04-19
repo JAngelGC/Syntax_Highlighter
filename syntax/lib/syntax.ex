@@ -7,6 +7,12 @@ defmodule Syntax do
     |> String.replace("'","\'")
     |> String.to_charlist()
     |> syntax()
+
+    # ff = File.read!(file)
+    # text = String.replace(ff,"'","\'")
+    # result = String.to_charlist(text)
+    # IO.inspect(result)
+    # syntax(result)
   end
 
   def syntax(text) do
@@ -19,7 +25,7 @@ defmodule Syntax do
       tchars = List.to_string(tchars)
       tchars = String.replace(tchars, "\'","'")
       tchars = HtmlEntities.encode(tchars)
-
+      # IO.puts(tchars)
       case token do
         # WHITESPACE
         :space -> "<span class='space'>#{tchars}</span>"
@@ -61,7 +67,7 @@ defmodule Syntax do
 
         # IDENTIFIERS AND FUNCTIONS
         # TODO: Parse function name from opening parentheses
-        :function -> "<span class='function'>#{tchars}</span>"
+        :function -> "<span class='function'>#{String.replace(tchars,"(","")}</span><span class='group'>(</span>"
         :identifier -> "<span class='identifier'>#{tchars}</span>"
         _ -> "<span>#{tchars}</span>"
       end
