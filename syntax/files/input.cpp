@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+#define LIMIT 5
+
 using namespace std;
 void calcular(int x, int y) {
   float a = x + y;

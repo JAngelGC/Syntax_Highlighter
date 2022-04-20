@@ -184,6 +184,7 @@ defmodule Syntax do
             .logical,
             .punctuation-color,
             .include,
+            .macro,
             .keyword,
             .reference {
               color: var(--keyword);
@@ -273,6 +274,7 @@ defmodule Syntax do
         # HEADERS
         :include -> "<span class='include'>#{tchars}</span>"
         :header -> "<span class='header'>#{tchars}</span>"
+        :macro -> "<span class='macro'>#{tchars}</span>"
 
 
         :keyword -> "<span class='keyword'>#{tchars}</span>"

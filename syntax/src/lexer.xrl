@@ -158,6 +158,7 @@ using                           :{token, {include, TokenChars}}.
 namespace                       :{token, {include, TokenChars}}.
 #(include)                      :{token, {include, TokenChars}}.
 <{LE}+.?{LE}*>                  :{token, {header, TokenChars}}.
+#define                         :{token, {macro, TokenChars}}.
 
 
 % Identifiers
