@@ -44,9 +44,16 @@ unsigned                        :{token, {data_type, TokenChars}}.
 {D}+\.{D}*f?                    :{token, {float, TokenChars}}.
 {D}+\.{D}*e[+\-]?{D}+f?         :{token, {float, TokenChars}}.
 "({AL}|{WS}|{PUNCTNOQUOTES})*?" :{token, {string, TokenChars}}.
+<<<<<<< HEAD
 '.'                          :{token, {char, TokenChars}}.
 true                            :{token, {keywordBool, TokenChars}}.
 false                           :{token, {keywordBool, TokenChars}}.
+=======
+'.'                          :{token, {char, TokenChars}}.
+true                            :{token, {keywordBool, TokenChars}}.
+false                           :{token, {keywordBool, TokenChars}}.
+
+>>>>>>> f66afb1074f37f1907d4072dc4105aeeb9735141
 
 % CONDITIONALS
 if                              :{token, {conditional, TokenChars}}.
@@ -151,6 +158,7 @@ wchar_t                         :{token, {keyword, TokenChars}}.
 
 
 % Include
+<<<<<<< HEAD
 using                           :{token, {include, TokenChars}}.
 namespace                       :{token, {include, TokenChars}}.
 #(include)                      :{token, {include, TokenChars}}.
@@ -160,9 +168,24 @@ namespace                       :{token, {include, TokenChars}}.
 % Identifiers
 % ([_A-Za-z]+[_0-9A-Za-z]*)\(         :{token, {function, TokenChars}}.
 [_A-Za-z]+[_0-9A-Za-z]*         :{token, {identifier, TokenChars}}.
+=======
+using                           :{token, {include, TokenChars}}.
+namespace                       :{token, {include, TokenChars}}.
+#(include)                      :{token, {include, TokenChars}}.
+<{LE}+.?{LE}*>                  :{token, {header, TokenChars}}.
+#define                         :{token, {macro, TokenChars}}.
+
+
+% Identifiers
+% ([_A-Za-z]+[_0-9A-Za-z]*)\(         :{token, {function, TokenChars}}.
+[_A-Za-z]+[_0-9A-Za-z]*         :{token, {identifier, TokenChars}}.
+>>>>>>> f66afb1074f37f1907d4072dc4105aeeb9735141
 
 %
 &                               :{token, {reference, TokenChars}}.
+
+% 
+&                               :{token, {reference, TokenChars}}.
 
 Erlang code.
 

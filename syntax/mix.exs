@@ -16,7 +16,10 @@ defmodule Syntax.MixProject do
     [main_module: Syntax]
   end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f66afb1074f37f1907d4072dc4105aeeb9735141
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
