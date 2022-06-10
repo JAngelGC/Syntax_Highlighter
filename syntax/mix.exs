@@ -16,10 +16,6 @@ defmodule Syntax.MixProject do
     [main_module: Syntax]
   end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f66afb1074f37f1907d4072dc4105aeeb9735141
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
@@ -30,7 +26,7 @@ defmodule Syntax.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:html_entities, "~> 0.5"}
+      {:html_entities, "~> 0.5"},
       {:benchee, "~> 1.0", only: :dev}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
