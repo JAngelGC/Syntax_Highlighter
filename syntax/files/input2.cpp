@@ -8,31 +8,30 @@ using namespace std;
 // (one per line)
 // output: minumum (only the value)
 
-int minimumValue(int arr[], int ini, int numberElements, int minimum){
+int minimumValue(int arr[], int ini, int numberElements, int minimum)
+{
 
     // Base case: This happen when we have reached the end of the array
-    if(ini>=numberElements)
+    if (ini >= numberElements)
         return minimum;
-    
+
     // Recursive condition: If the minimum is less than the element we are checking, we stay with the minimum
-    if(minimum< arr[ini+1]){
+    if (minimum < arr[ini + 1])
+    {
         ini++;
         return minimumValue(arr, ini, numberElements, minimum);
     }
-    
+
     // Recursive condition: If the element we are checking is less than the minimum, we switch them
-    else{
+    else
+    {
         ini++;
         return minimumValue(arr, ini, numberElements, arr[ini]);
     }
-
-
-
 }
 
-
-
-int main(){
+int main()
+{
 
     cout << "\n----------------------------------------" << endl;
 
@@ -41,12 +40,10 @@ int main(){
 
     int arr[numberOfArray];
 
-    for(int i=0; i<numberOfArray; i++)
+    for (int i = 0; i < numberOfArray; i++)
         cin >> arr[i];
 
-
-    cout << "\nEl elemento de menor valor es: " << minimumValue(arr, 0, numberOfArray-1, arr[0]);
-
+    cout << "\nEl elemento de menor valor es: " << minimumValue(arr, 0, numberOfArray - 1, arr[0]);
 
     cout << "\n----------------------------------------" << endl;
 

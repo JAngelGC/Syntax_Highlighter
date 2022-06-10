@@ -2,17 +2,41 @@ defmodule Syntax do
   # :lexer.string('area = pi * radio ** 2')
   # Syntax.format(elem(:lexer.string('area = pi * radio ** 2'),1))
 
-  def main(file) do
+  def main(num) do
+    # file = "files/input.cpp"
+    file = "files/input#{num}.cpp"
+
     File.read!(file)
     |> String.replace("'","\'")
     |> String.to_charlist()
-    |> syntax()
-    |> IO.puts
+    |> syntax(num)
+    # |> IO.puts
   end
 
-  def syntax(text) do
+
+
+  #########################################################
+  # Funcion para llamar desde el benchmark
+
+  def syntaxConcurrent() do
+    files = Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50)
+    files
+    |> Enum.map(fn numFile -> Task.async(fn -> main(numFile) end) end)
+    |> Enum.map(&Task.await/1)
+  end
+
+  def syntaxSequential() do
+    files = Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50) ++ Enum.to_list(1..50)
+    files
+    |> Enum.map(fn numFile -> main(numFile) end)
+  end
+
+  #########################################################
+
+
+  def syntax(text, num) do
     htmlStr = format(elem(:lexer.string(text),1))
-    _intoHTML = File.write("htmlFinal.html", htmlStr) #Ponemos el resultado en un archivo
+    _intoHTML = File.write("output/htmlFinal#{num}.html", htmlStr) #Ponemos el resultado en un archivo
     htmlStr
   end
 
@@ -276,7 +300,6 @@ defmodule Syntax do
         :header -> "<span class='header'>#{tchars}</span>"
         :macro -> "<span class='macro'>#{tchars}</span>"
 
-
         :keyword -> "<span class='keyword'>#{tchars}</span>"
         :reference -> "<span class='reference'>#{tchars}</span>"
 
@@ -293,6 +316,5 @@ defmodule Syntax do
     htmlUpPart <> htmlMiddlePart <> htmlDownPart
 
   end
-
 
 end

@@ -128,7 +128,8 @@ int main()
     insertAtTheEnd
     deleteAtTheEnd
     */
-    if (2 > 1){
+    if (2 > 1)
+    {
         cout << "jaja";
     }
 
