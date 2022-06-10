@@ -10,6 +10,11 @@
 
 6. Ejemplo de ejecucion: **escript syntax "files/input.cpp"**
 
+### _Como ejecutar benchmark_
+
+1. Moverse a la carpeta SyntaxHighlighter/syntax
+2. Correr `mix run benchmark.exs`
+
 #### Autores
 
 - Carlos Daniel Diaz Arrazate
